@@ -11,11 +11,12 @@ class ToDoList extends Component {
   onSubmit = e => {
     e.preventDefault()
     const { addTodoList } = this.props
-    const ob1 = {
+    const object = {
       type: 'ADD_TODO',
       text: this.refs.toDoHolder.value
     }
-    addTodoList(ob1)
+    addTodoList(object)
+    this.refs.toDoHolder.value = ''
   }
 
   render(){

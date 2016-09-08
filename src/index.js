@@ -6,8 +6,6 @@ import todoReducer from './todoReducer'
 
 const store = createStore(todoReducer)
 
-
-
 const getInputValue = text => {
   store.dispatch(text)
 
@@ -15,13 +13,13 @@ const getInputValue = text => {
 
 const render =() => {
   function todos (arr) {
-
-    return arr.map(
-    (todo, index) => <div key={index}>
-      <ul> <li>{todo.text}</li> </ul>
+    return arr.map
+    (
+    (todo, index) =>
+    <div key={index}>
+      <ul><li>{todo.text}</li></ul>
     </div>
     )
-
   }
   ReactDOM.render(
     <Todo text = {todos(store.getState())} addTodoList={getInputValue}
