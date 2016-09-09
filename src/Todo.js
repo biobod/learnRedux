@@ -1,39 +1,47 @@
 import React, { Component, PropTypes } from 'react'
 
-
-
-
 class ToDoList extends Component {
-  constructor(props) {
-    super(props)
+
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
   }
+
+  createAddTodoAction = text => ({
+    type: 'ADD_TODO',
+    text,
+  })
 
   onSubmit = e => {
     e.preventDefault()
-    const { addTodoList } = this.props
-    const object = {
-      type: 'ADD_TODO',
-      text: this.refs.toDoHolder.value
-    }
-    addTodoList(object)
-    this.refs.toDoHolder.value = ''
+
+    const {
+      createAddTodoAction,
+      props: { dispatch },
+      refs: { todoHolder }
+    } = this
+
+    const addTodoAction = createAddTodoAction(todoHolder.value)
+
+    dispatch(addTodoAction)
+    todoHolder.value = ''
   }
 
-  render(){
-    const {text} = this.props
-    return (
+  render() {
+    const {
+      onSubmit,
+      props: { text }
+    } = this
 
-        <div>
-          <form onSubmit={this.onSubmit}>
-            <input type="text" ref="toDoHolder" />
-            <button type="submit">Submit</button>
-          </form>
+    return (
+      <div>
+        <form onSubmit={onSubmit}>
+          <input type="text" ref="todoHolder" />
+          <button type="submit">Submit</button>
+        </form>
         {text}
-        </div>
+      </div>
     )
   }
 }
-
-
 
 export default ToDoList
