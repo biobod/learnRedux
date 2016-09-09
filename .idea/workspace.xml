@@ -105,8 +105,8 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/Todo.js" />
         <option value="$PROJECT_DIR$/src/todoReducer.js" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -285,7 +285,7 @@
       <workItem from="1473411854258" duration="1041000" />
       <workItem from="1473416916008" duration="1564000" />
       <workItem from="1473418866062" duration="2060000" />
-      <workItem from="1473420976342" duration="1714000" />
+      <workItem from="1473420976342" duration="1732000" />
     </task>
     <task id="LOCAL-00001" summary="added normal todolist">
       <created>1473361972251</created>
@@ -315,11 +315,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473422539999</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ignore">
+      <created>1473422708538</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1473422708538</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24776000" />
+    <option name="totallyTimeSpent" value="24794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="4" width="1279" height="706" extended-state="0" />
@@ -378,7 +385,8 @@
     <MESSAGE value="added clean input field and check for empty field" />
     <MESSAGE value="ign" />
     <MESSAGE value="deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
