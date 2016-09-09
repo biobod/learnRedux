@@ -6,17 +6,21 @@ class ToDoList extends Component {
     dispatch: PropTypes.func.isRequired,
   }
 
-  createAddTodoAction = text => ({
+  createAddTodoAction = (text) => ({
     type: 'ADD_TODO',
     text,
   })
 
+  removeTodoAction = (index) =>({
+    type: 'REMOVE_TODO',
+    index,
+  })
+
   onSubmit = e => {
     e.preventDefault()
-
     const {
       createAddTodoAction,
-      props: { dispatch },
+      props: { dispatch},
       refs: { todoHolder }
     } = this
 
@@ -26,11 +30,30 @@ class ToDoList extends Component {
     todoHolder.value = ''
   }
 
+  deleteText = (index) =>{
+    const {
+      removeTodoAction,
+      props: { dispatch},
+    } = this
+    const removeList = removeTodoAction(index)
+    dispatch(removeList)
+  }
+
   render() {
     const {
       onSubmit,
-      props: { text }
+      deleteText,
+      props: { text}
     } = this
+
+   const todos = arr => arr.map(
+      (todo, index) =>
+        <div key={index}>
+          <ul>
+            <li>{todo.text}<button onClick={() => deleteText(index)}>X</button></li>
+          </ul>
+        </div>
+    )
 
     return (
       <div>
@@ -38,7 +61,7 @@ class ToDoList extends Component {
           <input type="text" ref="todoHolder" />
           <button type="submit">Submit</button>
         </form>
-        {text}
+        {todos(text)}
       </div>
     )
   }

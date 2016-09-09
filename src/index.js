@@ -10,19 +10,10 @@ const dispatch = action => {
   store.dispatch(action)
 }
 
-const todos = arr => arr.map(
-  (todo, index) =>
-    <div key={index}>
-      <ul>
-        <li>{todo.text}</li>
-      </ul>
-    </div>
-)
-
 const render = () => {
   ReactDOM.render(
     <Todo
-      text={todos(store.getState())}
+      text={store.getState()}
       dispatch={dispatch}
     />,
     document.getElementById('root')
